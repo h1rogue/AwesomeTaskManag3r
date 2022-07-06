@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19529"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomBottomBar" customModule="TaskManager" customModuleProvider="target">
             <connections>
                 <outlet property="bottomBarView" destination="DMa-GF-Bki" id="Ae5-05-pXd"/>
-                <outlet property="circleButton" destination="jw4-ss-bZd" id="eMe-gG-nWQ"/>
+                <outlet property="circleButton" destination="jw4-ss-bZd" id="HL3-wp-XUC"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="rcq-lq-HC0"/>
             </connections>
         </placeholder>
@@ -22,31 +21,28 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMa-GF-Bki">
                     <rect key="frame" x="0.0" y="109" width="494" height="70"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jw4-ss-bZd" customClass="UIButton">
-                            <rect key="frame" x="207" y="-40" width="80" height="80"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <gestureRecognizers/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="80" id="8GN-tL-nzr"/>
-                                <constraint firstAttribute="height" constant="80" id="fkJ-0S-WOq"/>
-                            </constraints>
-                        </view>
-                    </subviews>
                     <color key="backgroundColor" systemColor="systemPurpleColor"/>
                     <constraints>
-                        <constraint firstItem="jw4-ss-bZd" firstAttribute="centerY" secondItem="DMa-GF-Bki" secondAttribute="top" id="7BP-lY-hMx"/>
-                        <constraint firstItem="jw4-ss-bZd" firstAttribute="centerX" secondItem="DMa-GF-Bki" secondAttribute="centerX" id="W39-dd-eJg"/>
                         <constraint firstAttribute="height" constant="70" id="nYh-X8-yiT"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jw4-ss-bZd" customClass="UIButton">
+                    <rect key="frame" x="207" y="69" width="80" height="80"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="8GN-tL-nzr"/>
+                        <constraint firstAttribute="height" constant="80" id="fkJ-0S-WOq"/>
+                    </constraints>
+                </view>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="DMa-GF-Bki" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6I5-1u-bcn"/>
+                <constraint firstItem="DMa-GF-Bki" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6I5-1u-bcn"/>
                 <constraint firstAttribute="bottom" secondItem="DMa-GF-Bki" secondAttribute="bottom" id="I9i-1r-B5X"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DMa-GF-Bki" secondAttribute="trailing" id="NZx-7A-dvI"/>
+                <constraint firstItem="jw4-ss-bZd" firstAttribute="centerY" secondItem="DMa-GF-Bki" secondAttribute="top" id="M6z-HS-N8F"/>
+                <constraint firstAttribute="trailing" secondItem="DMa-GF-Bki" secondAttribute="trailing" id="NZx-7A-dvI"/>
+                <constraint firstItem="jw4-ss-bZd" firstAttribute="centerX" secondItem="DMa-GF-Bki" secondAttribute="centerX" id="dmZ-qI-Z95"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="227.536231884058" y="-364.62053571428572"/>

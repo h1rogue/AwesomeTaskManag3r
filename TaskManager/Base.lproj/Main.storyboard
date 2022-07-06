@@ -1,44 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VlP-jQ-dsJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TaskManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeVC" customModule="TaskManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="154" translatesAutoresizingMaskIntoConstraints="NO" id="psE-Vi-wxg" customClass="CustomBottomBar" customModule="TaskManager" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="742" width="414" height="154"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mGd-vc-ch0">
+                                <rect key="frame" x="10" y="98" width="394" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EjA-PJ-7jn">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1um-lk-VYV">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8cd-Zn-40M">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dzg-sk-Hyu" customClass="CustomBottomBar" customModule="TaskManager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="786" width="414" height="110"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="IFW-SO-Chl"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="psE-Vi-wxg" secondAttribute="bottom" id="ObN-W9-dbb"/>
-                            <constraint firstItem="psE-Vi-wxg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TsU-2K-U7Y"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="psE-Vi-wxg" secondAttribute="trailing" id="uPu-Ob-9c9"/>
+                            <constraint firstItem="mGd-vc-ch0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="5JZ-hU-RdP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mGd-vc-ch0" secondAttribute="bottom" id="5ZO-pc-sb6"/>
+                            <constraint firstItem="mGd-vc-ch0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="AUR-mH-hNr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dzg-sk-Hyu" secondAttribute="trailing" id="LlH-yN-hmt"/>
+                            <constraint firstAttribute="bottom" secondItem="Dzg-sk-Hyu" secondAttribute="bottom" id="OCl-sa-diF"/>
+                            <constraint firstItem="Dzg-sk-Hyu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q6u-UY-PhJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mGd-vc-ch0" secondAttribute="trailing" constant="10" id="Wvf-46-M4T"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5Ck-b4-Lhd"/>
                     <connections>
-                        <outlet property="customBottomBar" destination="psE-Vi-wxg" id="7jB-ex-eGo"/>
+                        <outlet property="bottomBar" destination="Dzg-sk-Hyu" id="oty-j2-Fc5"/>
+                        <outlet property="collectionView" destination="mGd-vc-ch0" id="y01-5u-r0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884.05797101449286" y="134.59821428571428"/>
+        </scene>
+        <!--Add New TaskVC-->
+        <scene sceneID="2oZ-rd-WtD">
+            <objects>
+                <viewController storyboardIdentifier="AddNewTaskVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wRU-aL-CY9" customClass="AddNewTaskVC" customModule="TaskManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kuE-EZ-cDu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aOK-B7-KPc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IjL-ro-Qsn"/>
+                        <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="IjL-ro-Qsn" firstAttribute="trailing" secondItem="aOK-B7-KPc" secondAttribute="trailing" id="Fno-GZ-SOV"/>
+                            <constraint firstItem="aOK-B7-KPc" firstAttribute="leading" secondItem="IjL-ro-Qsn" secondAttribute="leading" id="alc-5c-hp6"/>
+                            <constraint firstItem="IjL-ro-Qsn" firstAttribute="bottom" secondItem="aOK-B7-KPc" secondAttribute="bottom" id="ctF-x4-8Mh"/>
+                            <constraint firstItem="aOK-B7-KPc" firstAttribute="top" secondItem="IjL-ro-Qsn" secondAttribute="top" id="oO7-oZ-y29"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="F52-xW-Jgt">
+                        <barButtonItem key="rightBarButtonItem" title="SAVE" id="mrQ-rr-Ivs">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="saveTask:" destination="wRU-aL-CY9" id="N7d-zq-17z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="aOK-B7-KPc" id="JXR-ZI-ByJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IA8-cU-ON8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1795.6521739130437" y="134.59821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="axO-GZ-bfg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VlP-jQ-dsJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OcE-MX-rXI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yx5-t6-orY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2E-vv-aA8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-26.086956521739133" y="134.59821428571428"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
