@@ -25,6 +25,7 @@
 		4453C001287602E300E1BC21 /* TodoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4453BFFF287602E300E1BC21 /* TodoTVC.xib */; };
 		4453C005287624AD00E1BC21 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453C004287624AD00E1BC21 /* TodoCell.swift */; };
 		4453C0072876250500E1BC21 /* TodoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4453C0062876250500E1BC21 /* TodoCell.xib */; };
+		4453C011287A140600E1BC21 /* ExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453C010287A140600E1BC21 /* ExtensionFile.swift */; };
 		44B3F36A287483E200C99658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3F369287483E200C99658 /* AppDelegate.swift */; };
 		44B3F36C287483E200C99658 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3F36B287483E200C99658 /* SceneDelegate.swift */; };
 		44B3F36E287483E200C99658 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3F36D287483E200C99658 /* HomeVC.swift */; };
@@ -54,6 +55,7 @@
 		4453BFFF287602E300E1BC21 /* TodoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTVC.xib; sourceTree = "<group>"; };
 		4453C004287624AD00E1BC21 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		4453C0062876250500E1BC21 /* TodoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoCell.xib; sourceTree = "<group>"; };
+		4453C010287A140600E1BC21 /* ExtensionFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFile.swift; sourceTree = "<group>"; };
 		44B3F366287483E200C99658 /* TaskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B3F369287483E200C99658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44B3F36B287483E200C99658 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 			path = AddNewTasksCells;
 			sourceTree = "<group>";
 		};
+		4453C00F287A13F500E1BC21 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4453C010287A140600E1BC21 /* ExtensionFile.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		44B3F35D287483E200C99658 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 		44B3F368287483E200C99658 /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
+				4453C00F287A13F500E1BC21 /* Common */,
 				44046A3A2874D850000BF56C /* ViewControllers */,
 				44046A352874D491000BF56C /* TaskModel */,
 				44B3F37D287484A100C99658 /* CustomViews */,
@@ -281,6 +292,7 @@
 				44046A3C2874D87A000BF56C /* AddNewTaskVC.swift in Sources */,
 				44B3F36A287483E200C99658 /* AppDelegate.swift in Sources */,
 				4453BFF42875EA5200E1BC21 /* DateTVC.swift in Sources */,
+				4453C011287A140600E1BC21 /* ExtensionFile.swift in Sources */,
 				44046A402874E2B7000BF56C /* AddNewTaskVM.swift in Sources */,
 				44B3F36C287483E200C99658 /* SceneDelegate.swift in Sources */,
 				4453C005287624AD00E1BC21 /* TodoCell.swift in Sources */,

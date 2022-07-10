@@ -80,6 +80,8 @@
             <connections>
                 <outlet property="endDateLabel" destination="jY2-fN-346" id="qvD-DR-Ff6"/>
                 <outlet property="endDateText" destination="G1b-fz-KLW" id="Ah0-la-gj2"/>
+                <outlet property="notifyButton1" destination="aIz-Zl-Cfr" id="fYv-K5-G0p"/>
+                <outlet property="notifyButton2" destination="GkS-ya-uqX" id="5do-gh-b6N"/>
                 <outlet property="startDateLabel" destination="Mjs-oa-3yH" id="fN2-Hd-pvT"/>
                 <outlet property="startDateText" destination="8AY-RW-Fe1" id="9aN-An-iE1"/>
             </connections>

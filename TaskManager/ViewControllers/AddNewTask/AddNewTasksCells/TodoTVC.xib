@@ -48,6 +48,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="notifyButton" destination="OUw-Uh-caW" id="aLb-ty-GNY"/>
                 <outlet property="stackView" destination="WoT-YL-nBm" id="C1z-Vq-1zD"/>
             </connections>
             <point key="canvasLocation" x="205.79710144927537" y="192.85714285714286"/>

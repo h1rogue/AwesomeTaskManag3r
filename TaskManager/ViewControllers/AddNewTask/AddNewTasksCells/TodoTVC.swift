@@ -8,11 +8,12 @@
 import UIKit
 
 class TodoTVC: UITableViewCell {
-    @IBOutlet weak var stackView: UIStackView!
-
+    @IBOutlet weak private var stackView: UIStackView!
+    @IBOutlet weak private var notifyButton: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.notifyButton.layer.cornerRadius = self.notifyButton.frame.height/2
     }
     
     func configure() {

@@ -8,12 +8,13 @@
 import UIKit
 
 class TitleTVC: UITableViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var notifyButton: UIView!
-    @IBOutlet weak var textField: UITextField!
-    
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var notifyButton: UIView!
+    @IBOutlet weak private var textField: UITextField!
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        textField.delegate = self
     }
     
     func configure() {
@@ -24,5 +25,12 @@ class TitleTVC: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+}
+
+extension TitleTVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.contentView.endEditing(true)
+        return true
     }
 }

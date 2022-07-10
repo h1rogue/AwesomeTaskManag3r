@@ -19,11 +19,49 @@ class AddNewTaskVC: UIViewController {
         viewModel?.delegate = self
         setUpNavBar()
         setUpTableView()
+        setUpKeyboard()
+    }
+    
+    @objc private func detectKeyboardComingUp(_ sender: NSNotification) {
+        guard let userInfo = sender.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+
+        var viewFrame: CGRect
+        
+        if let responder = UIResponder.firstResponder as? UITextField {
+            let responderFrame = responder.frame
+            let convFrame = self.view.convert(responderFrame, from: responder.superview)
+            viewFrame = convFrame
+        } else if let responder = UIResponder.firstResponder as? UITextView {
+            let responderFrame = responder.frame
+            let convFrame = self.view.convert(responderFrame, from: responder.superview)
+            viewFrame = convFrame
+        } else {
+            return
+        }
+        
+        if keyboardFrame.cgRectValue.intersects(viewFrame) {
+            let intersectionFrameHeight = keyboardFrame.cgRectValue.intersection(viewFrame).height
+            self.view.frame.origin.y =  -intersectionFrameHeight
+        }
+        return
+    }
+
+    @objc private func detectKeyboardGoingDown(_ sender: NSNotification) {
+            self.view.frame.origin.y = 0
+        return
+    }
+    
+    private func setUpKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(detectKeyboardComingUp), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(detectKeyboardGoingDown), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = dataSource
+        tableView.keyboardDismissMode = .onDrag
+        tableView.separatorInset = .zero
         registerTableViewCells()
         addSnapShot()
     }
@@ -38,8 +76,7 @@ class AddNewTaskVC: UIViewController {
     
     private func setUpNavBar() {
         self.navigationItem.title = "Add New Task"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        //self.navigationItem.hidesBackButton = true
+        self.navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     @IBAction func saveTask(_ sender: Any) {
@@ -95,8 +132,3 @@ extension AddNewTaskVC {
     }
 }
 
-extension UITableViewCell {
-    static var identifier: String {
-        return String(describing: self)
-    }
-}

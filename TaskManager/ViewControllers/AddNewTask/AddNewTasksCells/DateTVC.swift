@@ -14,6 +14,8 @@ class DateTVC: UITableViewCell {
     @IBOutlet weak private var startDateLabel: UILabel!
     @IBOutlet weak private var endDateText: UILabel!
     @IBOutlet weak private var endDateLabel: UILabel!
+    @IBOutlet weak private var notifyButton1: UIView!
+    @IBOutlet weak private var notifyButton2: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +28,8 @@ class DateTVC: UITableViewCell {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         self.startDateLabel.text = dateFormatter.string(from: date)
         self.endDateLabel.text = dateFormatter.string(from: date)
+        notifyButton1.layer.cornerRadius = notifyButton1.frame.height/2
+        notifyButton2.layer.cornerRadius = notifyButton2.frame.height/2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
