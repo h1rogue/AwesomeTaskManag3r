@@ -13,6 +13,9 @@ class PriorityTVC: UITableViewCell {
     @IBOutlet weak private var p1Button: UIButton!
     @IBOutlet weak private var p2Button: UIButton!
     @IBOutlet weak private var notifyButton: UIView!
+    @IBOutlet weak private var poView: UIView!
+    @IBOutlet weak private var p1View: UIView!
+    @IBOutlet weak private var p2View: UIView!
     
     @IBAction private func poClicked() {
         
@@ -28,6 +31,9 @@ class PriorityTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        poView.addDefaultCornerRadius()
+        p1View.addDefaultCornerRadius()
+        p2View.addDefaultCornerRadius()
         self.notifyButton.layer.cornerRadius = self.notifyButton.frame.height/2
     }
 

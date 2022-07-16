@@ -26,6 +26,7 @@
 		4453C005287624AD00E1BC21 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453C004287624AD00E1BC21 /* TodoCell.swift */; };
 		4453C0072876250500E1BC21 /* TodoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4453C0062876250500E1BC21 /* TodoCell.xib */; };
 		4453C011287A140600E1BC21 /* ExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453C010287A140600E1BC21 /* ExtensionFile.swift */; };
+		4455C6C32881DD7E006F6830 /* AddTodosSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455C6C22881DD7E006F6830 /* AddTodosSnackbar.swift */; };
 		44B3F36A287483E200C99658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3F369287483E200C99658 /* AppDelegate.swift */; };
 		44B3F36C287483E200C99658 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3F36B287483E200C99658 /* SceneDelegate.swift */; };
 		44B3F36E287483E200C99658 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3F36D287483E200C99658 /* HomeVC.swift */; };
@@ -56,6 +57,7 @@
 		4453C004287624AD00E1BC21 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		4453C0062876250500E1BC21 /* TodoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoCell.xib; sourceTree = "<group>"; };
 		4453C010287A140600E1BC21 /* ExtensionFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFile.swift; sourceTree = "<group>"; };
+		4455C6C22881DD7E006F6830 /* AddTodosSnackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodosSnackbar.swift; sourceTree = "<group>"; };
 		44B3F366287483E200C99658 /* TaskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B3F369287483E200C99658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44B3F36B287483E200C99658 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		44046A3A2874D850000BF56C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4455C6C12881DD4F006F6830 /* TodoSnackbar */,
 				44046A3E2874E29C000BF56C /* AddNewTask */,
 				44046A3D2874E286000BF56C /* Home */,
 			);
@@ -149,6 +152,14 @@
 				4453C010287A140600E1BC21 /* ExtensionFile.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		4455C6C12881DD4F006F6830 /* TodoSnackbar */ = {
+			isa = PBXGroup;
+			children = (
+				4455C6C22881DD7E006F6830 /* AddTodosSnackbar.swift */,
+			);
+			path = TodoSnackbar;
 			sourceTree = "<group>";
 		};
 		44B3F35D287483E200C99658 = {
@@ -293,6 +304,7 @@
 				44B3F36A287483E200C99658 /* AppDelegate.swift in Sources */,
 				4453BFF42875EA5200E1BC21 /* DateTVC.swift in Sources */,
 				4453C011287A140600E1BC21 /* ExtensionFile.swift in Sources */,
+				4455C6C32881DD7E006F6830 /* AddTodosSnackbar.swift in Sources */,
 				44046A402874E2B7000BF56C /* AddNewTaskVM.swift in Sources */,
 				44B3F36C287483E200C99658 /* SceneDelegate.swift in Sources */,
 				4453C005287624AD00E1BC21 /* TodoCell.swift in Sources */,

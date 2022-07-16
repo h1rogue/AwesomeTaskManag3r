@@ -14,6 +14,12 @@ extension UITableViewCell {
     }
 }
 
+extension UIView {
+    func addDefaultCornerRadius(_ radius: Double = 4.0) {
+        self.layer.cornerRadius = radius
+    }
+}
+
 extension UIResponder {
    
     private static weak var _firstResponder: UIResponder?

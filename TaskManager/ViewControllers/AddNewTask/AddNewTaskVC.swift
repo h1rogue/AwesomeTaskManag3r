@@ -18,8 +18,18 @@ class AddNewTaskVC: UIViewController {
         super.viewDidLoad()
         viewModel?.delegate = self
         setUpNavBar()
-        setUpTableView()
         setUpKeyboard()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillShowNotification)
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillHideNotification)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setUpTableView()
     }
     
     @objc private func detectKeyboardComingUp(_ sender: NSNotification) {
@@ -113,6 +123,7 @@ extension AddNewTaskVC {
                 return cell
             case .todos(_):
                 let cell = tableView.dequeueReusableCell(withIdentifier: TodoTVC.identifier, for: indexPath) as? TodoTVC
+                cell?.delegate = self
                 return cell
 
             }
@@ -132,3 +143,13 @@ extension AddNewTaskVC {
     }
 }
 
+extension AddNewTaskVC: TodoTVCDelegate {
+    func addNewTaskClicked() {
+        let mainStory = UIStoryboard.init(name: "Main", bundle: .main)
+        
+        if let vc = UIStoryboard.instantiateViewController(mainStory)(withIdentifier: "AddTodosSnackbar") as? AddTodosSnackbar {
+            modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
+    }
+}

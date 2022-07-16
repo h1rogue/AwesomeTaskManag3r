@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Af2-0W-06O">
-                        <rect key="frame" x="25" y="10" width="46.5" height="21"/>
+                        <rect key="frame" x="25" y="10" width="46.5" height="76"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUw-Uh-caW">
-                        <rect key="frame" x="10" y="18" width="5" height="5"/>
+                        <rect key="frame" x="10" y="45.5" width="5" height="5"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="5" id="FED-cg-IhS"/>
@@ -32,7 +32,10 @@
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WoT-YL-nBm">
-                        <rect key="frame" x="25" y="48" width="373" height="90"/>
+                        <rect key="frame" x="25" y="103" width="373" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="3gw-4c-TEf"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -49,6 +52,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="notifyButton" destination="OUw-Uh-caW" id="aLb-ty-GNY"/>
+                <outlet property="stackHeightConstraint" destination="3gw-4c-TEf" id="Nr9-wm-06h"/>
                 <outlet property="stackView" destination="WoT-YL-nBm" id="C1z-Vq-1zD"/>
             </connections>
             <point key="canvasLocation" x="205.79710144927537" y="192.85714285714286"/>
