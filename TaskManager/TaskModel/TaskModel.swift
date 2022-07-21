@@ -27,6 +27,17 @@ enum TaskModelPriority: Codable {
 struct Todos: Codable, Hashable {
     let title: String
     let todoDetail: String?
-    let todoDetails: String
     let isCompleted: Bool
+    
+    init(from todo: Todos) {
+        self.title = todo.title
+        self.todoDetail = todo.todoDetail
+        self.isCompleted = todo.isCompleted
+    }
+    
+    init(title: String, todoDetail: String, isComplete: Bool) {
+        self.title = title
+        self.todoDetail = todoDetail
+        self.isCompleted = isComplete
+    }
 }

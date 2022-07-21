@@ -19,6 +19,12 @@ class AddTodosSnackbar: UIViewController {
     @IBOutlet weak private var saveButton: UIButton!
     @IBOutlet weak private var seperatorView: UIView!
     @IBOutlet weak private var seperatorHeight: NSLayoutConstraint!
+    @IBOutlet weak private var titleMsgLabel: UILabel!
+    @IBOutlet weak private var detailMsgLabel: UILabel!
+    
+    var titleText: String = ""
+    var todoDetailsText: String = ""
+    var completionBlock: ((String, String) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +35,7 @@ class AddTodosSnackbar: UIViewController {
         titleTextField.placeholder = "Add Title"
         titleTextField.tintColor = .lightGray
         titleTextField.delegate = self
+        taskTextView.delegate = self
         
         addKeyboardNotification()
     }
@@ -69,6 +76,30 @@ class AddTodosSnackbar: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(detectKeyboardGoingDown), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    private func validateFields() {
+        if titleText.count <= 0 {
+            titleMsgLabel.isHidden = false
+            titleMsgLabel.text = "Add title"
+        } else if titleText.count > 30 {
+            titleMsgLabel.isHidden = false
+            titleMsgLabel.text = "max 30 character"
+        } else {
+            titleMsgLabel.isHidden = true
+        }
+        
+        if todoDetailsText.count <= 0 {
+            detailMsgLabel.isHidden = false
+            detailMsgLabel.text = "Add description"
+        } else {
+            detailMsgLabel.isHidden = true
+        }
+        
+        if let completion = completionBlock {
+            completion(titleText, todoDetailsText)
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @objc func dismissBackground() {
         dismiss(animated: true, completion: nil)
     }
@@ -78,10 +109,32 @@ class AddTodosSnackbar: UIViewController {
     }
     
     @IBAction func saveClicked(_ sender: Any) {
-        
+        validateFields()
     }
+    
+    
 }
 
 extension AddTodosSnackbar: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.titleText = textField.text ?? ""
+        titleTextField.endEditing(true)
+        return true
+    }
     
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        self.titleText = textField.text ?? ""
+        titleTextField.endEditing(true)
+    }
+}
+
+extension AddTodosSnackbar: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        self.todoDetailsText = textView.text ?? ""
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
+        textView.textColor = .black
+    }
 }

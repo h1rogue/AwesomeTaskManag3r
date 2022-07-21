@@ -134,20 +134,30 @@ extension AddNewTaskVC {
     private func addSnapShot() {
         var snapShot = AddNewTaskVM.Snapshot()
         snapShot.appendSections([.title, .timeLine, .priority, .taskDetails, .todos])
-        snapShot.appendItems([.titleSection(.init(title: "hello"))], toSection: .title)
-        snapShot.appendItems([.timeLineSection(.init(startDate: "12", endDate: "1234"))], toSection: .timeLine)
+        snapShot.appendItems([.titleSection(.init(title: ""))], toSection: .title)
+        snapShot.appendItems([.timeLineSection(.init(startDate: "", endDate: ""))], toSection: .timeLine)
         snapShot.appendItems([.priorities(.p0)], toSection: .priority)
-        snapShot.appendItems([.taskDetail(.init(taskDetails: "here tocc"))], toSection: .taskDetails)
-        snapShot.appendItems([.todos(.init(title: "titld", todoDetail: "asasas", todoDetails: "asasa", isCompleted: false))], toSection: .todos)
+        snapShot.appendItems([.taskDetail(.init(taskDetails: ""))], toSection: .taskDetails)
+        snapShot.appendItems([.todos(.init(title: "", todoDetail: "", isComplete: false))], toSection: .todos)
         dataSource.apply(snapShot, animatingDifferences: true)
+    }
+    
+    private func updateTodoSnapshot(_ todo: Todos) {
+        var snapShot = AddNewTaskVM.Snapshot()
+        snapShot.insertItems([.todos(.init(from: todo))], beforeItem: .todos(.init(title: "", todoDetail: "", isComplete: false)))
     }
 }
 
 extension AddNewTaskVC: TodoTVCDelegate {
-    func addNewTaskClicked() {
+    
+    func presentNewTodoSnckbar() {
         let mainStory = UIStoryboard.init(name: "Main", bundle: .main)
-        
         if let vc = UIStoryboard.instantiateViewController(mainStory)(withIdentifier: "AddTodosSnackbar") as? AddTodosSnackbar {
+            vc.completionBlock = { title, desc in
+                //todo: add new todo cell
+                let todo = Todos(title: title, todoDetail: desc, isComplete: false)
+                self.updateTodoSnapshot(todo)
+            }
             modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
         }

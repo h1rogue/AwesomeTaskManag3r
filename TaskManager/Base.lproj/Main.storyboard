@@ -169,19 +169,36 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkS-mJ-GrK">
+                                        <rect key="frame" x="83" y="133.5" width="27" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ET0-If-y1l">
+                                        <rect key="frame" x="136" y="230.5" width="27" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xKm-St-pla" secondAttribute="trailing" constant="20" symbolic="YES" id="09y-NC-MT3"/>
                                     <constraint firstAttribute="trailing" secondItem="IHV-tz-70O" secondAttribute="trailing" constant="35" id="8Ya-Hd-IbV"/>
                                     <constraint firstItem="zTx-4S-r34" firstAttribute="leading" secondItem="Qem-Dj-pxC" secondAttribute="leading" constant="35" id="972-Ca-p38"/>
+                                    <constraint firstItem="ET0-If-y1l" firstAttribute="leading" secondItem="S9E-mr-BCA" secondAttribute="trailing" constant="10" id="Ews-N4-a1B"/>
                                     <constraint firstItem="1dF-Bo-dGg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zTx-4S-r34" secondAttribute="trailing" constant="8" symbolic="YES" id="F0Y-mi-f8c"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PkS-mJ-GrK" secondAttribute="trailing" constant="35" id="InU-dV-EC9"/>
                                     <constraint firstItem="xap-M1-U2Q" firstAttribute="top" secondItem="xKm-St-pla" secondAttribute="bottom" constant="50" id="MYD-MA-9QQ"/>
                                     <constraint firstItem="xap-M1-U2Q" firstAttribute="leading" secondItem="Qem-Dj-pxC" secondAttribute="leading" constant="40" id="MxV-De-lls"/>
                                     <constraint firstItem="ajn-l3-KmK" firstAttribute="top" secondItem="xap-M1-U2Q" secondAttribute="bottom" constant="12" id="PFM-yC-6gq"/>
+                                    <constraint firstItem="PkS-mJ-GrK" firstAttribute="leading" secondItem="xap-M1-U2Q" secondAttribute="trailing" constant="10" id="Ufy-Wn-Zub"/>
                                     <constraint firstItem="xKm-St-pla" firstAttribute="leading" secondItem="Qem-Dj-pxC" secondAttribute="leading" constant="35" id="W6H-el-kyQ"/>
                                     <constraint firstItem="xKm-St-pla" firstAttribute="top" secondItem="Qem-Dj-pxC" secondAttribute="top" constant="50" id="aNl-mS-6Lg"/>
+                                    <constraint firstItem="ET0-If-y1l" firstAttribute="centerY" secondItem="S9E-mr-BCA" secondAttribute="centerY" id="c8e-zt-Qxd"/>
                                     <constraint firstAttribute="trailing" secondItem="ajn-l3-KmK" secondAttribute="trailing" constant="35" id="eX1-tm-uDn"/>
+                                    <constraint firstItem="PkS-mJ-GrK" firstAttribute="centerY" secondItem="xap-M1-U2Q" secondAttribute="centerY" id="hJO-Kj-euM"/>
                                     <constraint firstItem="S9E-mr-BCA" firstAttribute="leading" secondItem="xap-M1-U2Q" secondAttribute="leading" id="i67-3L-D8N"/>
                                     <constraint firstItem="1dF-Bo-dGg" firstAttribute="top" secondItem="zTx-4S-r34" secondAttribute="top" id="jPA-4X-tfo"/>
                                     <constraint firstItem="IHV-tz-70O" firstAttribute="top" secondItem="S9E-mr-BCA" secondAttribute="bottom" constant="12" id="msn-Un-8d2"/>
@@ -194,6 +211,7 @@
                                     <constraint firstItem="zTx-4S-r34" firstAttribute="top" secondItem="IHV-tz-70O" secondAttribute="bottom" constant="30" id="vYC-tw-e43"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xap-M1-U2Q" secondAttribute="trailing" constant="35" id="vkh-NG-aP0"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="S9E-mr-BCA" secondAttribute="trailing" constant="35" id="vsZ-Li-IJS"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ET0-If-y1l" secondAttribute="trailing" constant="35" id="yHg-tH-Cwb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Zz-oq-YGc">
@@ -222,6 +240,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="zTx-4S-r34" id="UHk-Kz-4bX"/>
                         <outlet property="containerView" destination="Qem-Dj-pxC" id="T8h-Ki-pnO"/>
+                        <outlet property="detailMsgLabel" destination="ET0-If-y1l" id="3Ai-kS-zV2"/>
                         <outlet property="dimmingView" destination="5vY-lc-8O9" id="JMk-NX-qGS"/>
                         <outlet property="saveButton" destination="1dF-Bo-dGg" id="m1j-UF-LtF"/>
                         <outlet property="seperatorHeight" destination="A3V-DT-nGS" id="Xkn-io-1MQ"/>
@@ -229,6 +248,7 @@
                         <outlet property="taskLabel" destination="S9E-mr-BCA" id="K3j-w5-Wpf"/>
                         <outlet property="taskTextView" destination="IHV-tz-70O" id="AcC-TW-J2K"/>
                         <outlet property="titleLabel" destination="xap-M1-U2Q" id="Sfz-So-Is0"/>
+                        <outlet property="titleMsgLabel" destination="PkS-mJ-GrK" id="M62-zo-9d5"/>
                         <outlet property="titleTextField" destination="ajn-l3-KmK" id="yv0-Gg-a89"/>
                     </connections>
                 </viewController>
@@ -261,6 +281,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

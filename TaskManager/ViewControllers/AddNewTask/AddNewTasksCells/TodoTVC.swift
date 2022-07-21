@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TodoTVCDelegate: AnyObject {
-    func addNewTaskClicked()
+    func presentNewTodoSnckbar()
 }
 
 class TodoTVC: UITableViewCell {
@@ -36,7 +36,7 @@ class TodoTVC: UITableViewCell {
     }
     
     @objc func addButtonTapped() {
-        delegate?.addNewTaskClicked()
+        delegate?.presentNewTodoSnckbar()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
