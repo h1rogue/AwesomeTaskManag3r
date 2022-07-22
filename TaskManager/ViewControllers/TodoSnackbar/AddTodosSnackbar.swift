@@ -77,6 +77,9 @@ class AddTodosSnackbar: UIViewController {
     }
     
     private func validateFields() {
+        var titleBool: Bool = false
+        var descBool: Bool = false
+        
         if titleText.count <= 0 {
             titleMsgLabel.isHidden = false
             titleMsgLabel.text = "Add title"
@@ -85,6 +88,7 @@ class AddTodosSnackbar: UIViewController {
             titleMsgLabel.text = "max 30 character"
         } else {
             titleMsgLabel.isHidden = true
+            titleBool = true
         }
         
         if todoDetailsText.count <= 0 {
@@ -92,11 +96,14 @@ class AddTodosSnackbar: UIViewController {
             detailMsgLabel.text = "Add description"
         } else {
             detailMsgLabel.isHidden = true
+            descBool = true
         }
         
-        if let completion = completionBlock {
-            completion(titleText, todoDetailsText)
-            dismiss(animated: true, completion: nil)
+        if titleBool && descBool {
+            if let completion = completionBlock {
+                completion(titleText, todoDetailsText)
+                dismiss(animated: true, completion: nil)
+            }
         }
     }
     
@@ -116,10 +123,9 @@ class AddTodosSnackbar: UIViewController {
 }
 
 extension AddTodosSnackbar: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
         self.titleText = textField.text ?? ""
-        titleTextField.endEditing(true)
-        return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {

@@ -7,33 +7,46 @@
 
 import UIKit
 
+protocol DateTVCDelegate: AnyObject {
+    func editDateClicked(dateType: DateType)
+}
+
+enum DateType {
+    case start
+    case end
+}
+
 class DateTVC: UITableViewCell {
     
-
     @IBOutlet weak private var startDateText: UILabel!
-    @IBOutlet weak private var startDateLabel: UILabel!
     @IBOutlet weak private var endDateText: UILabel!
-    @IBOutlet weak private var endDateLabel: UILabel!
     @IBOutlet weak private var notifyButton1: UIView!
     @IBOutlet weak private var notifyButton2: UIView!
+  
+    weak var delegate: DateTVCDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configure()
+        setupCell()
+    }
+    
+    func setupCell() {
+  //      let date = Date()
+//        let dateFormatter = DateFormatter()
+     //   dateFormatter.dateFormat = "dd/MM/yyyy"
+//        self.startDateLabel.text = dateFormatter.string(from: date)
+  //      self.endDateLabel.text = dateFormatter.string(from: date)
+        notifyButton1.layer.cornerRadius = notifyButton1.frame.height/2
+        notifyButton2.layer.cornerRadius = notifyButton2.frame.height/2
+        
     }
     
     func configure() {
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        self.startDateLabel.text = dateFormatter.string(from: date)
-        self.endDateLabel.text = dateFormatter.string(from: date)
-        notifyButton1.layer.cornerRadius = notifyButton1.frame.height/2
-        notifyButton2.layer.cornerRadius = notifyButton2.frame.height/2
+        
     }
-
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 }

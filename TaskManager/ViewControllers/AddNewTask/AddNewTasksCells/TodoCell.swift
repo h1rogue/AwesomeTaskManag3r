@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol TodoCellDelegate: AnyObject {
+    func updateSelectedState(todo: Todos)
+}
+
 class TodoCell: UIView {
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var radioButton: UIImageView!
-    var isTaskDone: Bool = false
+    var todo: Todos?
+    
+    weak var delegate: TodoCellDelegate?
    
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,28 +29,46 @@ class TodoCell: UIView {
         customInit()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.layer.borderColor = UIColor.black.cgColor
+        contentView.layer.borderWidth = 1
+    }
+    
+    func configure(todo: Todos) {
+        self.todo = todo
+        self.label.text = todo.title
+        setInitialButtonState(todo)
+    }
+    
     func customInit() {
-        if let view = Bundle.main.loadNibNamed("TodoCell", owner: self, options: nil)?[0] as? TodoCell {
-            view.frame = bounds
-            addSubview(view)
-        }
+        Bundle.main.loadNibNamed("TodoCell", owner: self)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(contentView)
     }
     
-    @objc func onAddButtonClick() {
-        if isTaskDone {
-            radioButton.image = UIImage(named: "radio_button_unchecked")
+    private func setInitialButtonState(_ todo: Todos) {
+        if todo.isCompleted {
+            radioButton.image = UIImage(named: "radio_button_selected")
         } else {
-            radioButton.image = UIImage(named: "radio_button_checked")
+            radioButton.image = UIImage(named: "radio_button_unselected")
         }
-        
-        isTaskDone = !isTaskDone
+    }
+
+    private func setEndButtonState(_ todo: Todos) {
+        if todo.isCompleted {
+            radioButton.image = UIImage(named: "radio_button_unselected")
+        } else {
+            radioButton.image = UIImage(named: "radio_button_selected")
+        }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        radioButton.image = UIImage(named: "radio_button_unchecked")
-        radioButton.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(onAddButtonClick))
-        radioButton.addGestureRecognizer(tap)
+    @IBAction func onAddButtonClick() {
+        guard let todo = todo else { return }
+        setEndButtonState(todo)
+        
+        todo.isCompleted = !todo.isCompleted
+        delegate?.updateSelectedState(todo: todo)
     }
 }

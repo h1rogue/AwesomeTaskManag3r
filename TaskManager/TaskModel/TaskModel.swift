@@ -24,10 +24,23 @@ enum TaskModelPriority: Codable {
     case p2
 }
 
-struct Todos: Codable, Hashable {
+class Todos: Codable, Hashable {
+    
+    static func == (lhs: Todos, rhs: Todos) -> Bool {
+        return lhs.title == rhs.title && lhs.todoDetail == rhs.todoDetail && lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher)
+    {
+        hasher.combine(title);
+        hasher.combine(todoDetail)
+        hasher.combine(id)
+    }
+    
     let title: String
     let todoDetail: String?
-    let isCompleted: Bool
+    var isCompleted: Bool
+    var id: UUID = UUID()
     
     init(from todo: Todos) {
         self.title = todo.title

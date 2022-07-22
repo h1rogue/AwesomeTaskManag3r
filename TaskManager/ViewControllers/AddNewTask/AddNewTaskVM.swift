@@ -44,12 +44,25 @@ class AddNewTaskVM {
     }
     
     enum Items: Hashable {
-        case titleSection(TitleSection)
-        case timeLineSection(TimeLineSection)
-        case taskDetail(TaskDetail)
-        case priorities(Priorities)
-        case todos(Todos)
+        case titleSection(TitleSection?)
+        case timeLineSection(TimeLineSection?)
+        case taskDetail(TaskDetail?)
+        case priorities(Priorities?)
+        case todos([Todos])
     }
     
-  
+    let sectionList: [TaskSections] = [.title, .timeLine, .priority, .taskDetails, .todos]
+    
+    var todoList: [Todos] = []
+    
+    func dummyItems(snapShot: Snapshot) -> Snapshot {
+        var snapShot = snapShot
+        snapShot.appendSections(self.sectionList)
+        snapShot.appendItems([.titleSection(nil)], toSection: .title)
+        snapShot.appendItems([.timeLineSection(nil)], toSection: .timeLine)
+        snapShot.appendItems([.priorities(.p0)], toSection: .priority)
+        snapShot.appendItems([.taskDetail(nil)], toSection: .taskDetails)
+        snapShot.appendItems([.todos(todoList)], toSection: .todos)
+        return snapShot
+    }
 }
