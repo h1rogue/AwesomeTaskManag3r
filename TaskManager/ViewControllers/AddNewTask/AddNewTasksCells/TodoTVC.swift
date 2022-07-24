@@ -17,12 +17,13 @@ class TodoTVC: UITableViewCell {
     @IBOutlet weak private var todoListStackView: UIStackView!
     @IBOutlet weak private var notifyButton: UIView!
     @IBOutlet weak private var stackHeightConstraint: NSLayoutConstraint!
-
+    @IBOutlet weak private var todoListToConstraint: NSLayoutConstraint!
     weak var delegate: TodoTVCDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.notifyButton.layer.cornerRadius = self.notifyButton.frame.height/2
+        todoListToConstraint.constant = 0
         addButton()
     }
     
@@ -31,6 +32,8 @@ class TodoTVC: UITableViewCell {
         for view in todoListStackView.subviews {
             view.removeFromSuperview()
         }
+        
+        todoListToConstraint.constant = 20
 
         for todo in todoList {
             let view = TodoCell(frame: .zero)

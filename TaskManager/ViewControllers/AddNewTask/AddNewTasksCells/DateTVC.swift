@@ -31,14 +31,8 @@ class DateTVC: UITableViewCell {
     }
     
     func setupCell() {
-  //      let date = Date()
-//        let dateFormatter = DateFormatter()
-     //   dateFormatter.dateFormat = "dd/MM/yyyy"
-//        self.startDateLabel.text = dateFormatter.string(from: date)
-  //      self.endDateLabel.text = dateFormatter.string(from: date)
         notifyButton1.layer.cornerRadius = notifyButton1.frame.height/2
         notifyButton2.layer.cornerRadius = notifyButton2.frame.height/2
-        
     }
     
     func configure() {

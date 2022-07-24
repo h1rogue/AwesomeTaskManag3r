@@ -11,14 +11,15 @@ class TitleTVC: UITableViewCell {
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var notifyButton: UIView!
     @IBOutlet weak private var textField: UITextField!
-
+    @IBOutlet weak private var errorMsgLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         textField.delegate = self
     }
     
     func configure() {
-        self.titleLabel.text = "title"
+        self.titleLabel.text = "Title"
         self.textField.placeholder = "Add Title"
         self.notifyButton.layer.cornerRadius = self.notifyButton.frame.height/2
     }
