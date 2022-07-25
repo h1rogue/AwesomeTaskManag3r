@@ -10,14 +10,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="DateTVC" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateTVC" rowHeight="181" id="KGk-i7-Jjw" customClass="DateTVC" customModule="TaskManager" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="DateTVC" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateTVC" rowHeight="137" id="KGk-i7-Jjw" customClass="DateTVC" customModule="TaskManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AY-RW-Fe1">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AY-RW-Fe1">
                         <rect key="frame" x="20" y="12" width="75.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -39,14 +39,14 @@
                             <constraint firstAttribute="height" constant="5" id="qtm-US-5YR"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1b-fz-KLW">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1b-fz-KLW">
                         <rect key="frame" x="20" y="77.5" width="69" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="B8F-sr-krt">
-                        <rect key="frame" x="58" y="36" width="120" height="30"/>
+                        <rect key="frame" x="235" y="12" width="120" height="30"/>
                         <color key="tintColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="AdK-Vz-vxn"/>
@@ -54,7 +54,7 @@
                         </constraints>
                     </datePicker>
                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="xuC-U8-bgE">
-                        <rect key="frame" x="54.5" y="106" width="120" height="30"/>
+                        <rect key="frame" x="235" y="77.5" width="120" height="30"/>
                         <color key="tintColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="CaG-FK-ma3"/>
@@ -64,30 +64,34 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="8AY-RW-Fe1" firstAttribute="centerY" secondItem="aIz-Zl-Cfr" secondAttribute="centerY" id="1AH-Bk-ZxK"/>
-                    <constraint firstItem="xuC-U8-bgE" firstAttribute="top" secondItem="G1b-fz-KLW" secondAttribute="bottom" constant="8" symbolic="YES" id="5Gt-nt-gnq"/>
+                    <constraint firstItem="xuC-U8-bgE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G1b-fz-KLW" secondAttribute="trailing" constant="10" id="7yO-bI-mY4"/>
                     <constraint firstItem="8AY-RW-Fe1" firstAttribute="leading" secondItem="aIz-Zl-Cfr" secondAttribute="trailing" constant="10" id="Bmc-4K-xDn"/>
                     <constraint firstAttribute="trailingMargin" secondItem="G1b-fz-KLW" secondAttribute="trailing" constant="266" id="FOB-Qr-FKt"/>
                     <constraint firstItem="GkS-ya-uqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="GoY-0G-dkf"/>
                     <constraint firstAttribute="trailing" secondItem="8AY-RW-Fe1" secondAttribute="trailing" constant="279.5" id="Gyj-l8-w3h"/>
                     <constraint firstItem="G1b-fz-KLW" firstAttribute="leading" secondItem="GkS-ya-uqX" secondAttribute="trailing" constant="10" id="KV6-CU-5e6"/>
-                    <constraint firstItem="B8F-sr-krt" firstAttribute="top" secondItem="8AY-RW-Fe1" secondAttribute="bottom" constant="3" id="NPK-gG-mUY"/>
                     <constraint firstItem="aIz-Zl-Cfr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Q29-8O-3xU"/>
-                    <constraint firstItem="B8F-sr-krt" firstAttribute="leading" secondItem="8AY-RW-Fe1" secondAttribute="centerX" id="UhK-hH-DFc"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xuC-U8-bgE" secondAttribute="bottom" constant="25" id="WGQ-h3-6R5"/>
+                    <constraint firstAttribute="trailing" secondItem="B8F-sr-krt" secondAttribute="trailing" constant="20" id="VOM-QZ-614"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xuC-U8-bgE" secondAttribute="bottom" constant="20" id="WGQ-h3-6R5"/>
+                    <constraint firstItem="B8F-sr-krt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8AY-RW-Fe1" secondAttribute="trailing" constant="10" id="g6Z-In-pkX"/>
                     <constraint firstItem="G1b-fz-KLW" firstAttribute="centerY" secondItem="GkS-ya-uqX" secondAttribute="centerY" id="hXS-Lp-BL3"/>
-                    <constraint firstItem="xuC-U8-bgE" firstAttribute="leading" secondItem="G1b-fz-KLW" secondAttribute="centerX" id="lay-Kv-Ymf"/>
                     <constraint firstItem="GkS-ya-uqX" firstAttribute="top" secondItem="aIz-Zl-Cfr" secondAttribute="bottom" constant="60" id="osW-kA-g29"/>
+                    <constraint firstItem="B8F-sr-krt" firstAttribute="top" secondItem="8AY-RW-Fe1" secondAttribute="top" id="r1h-Jg-p0e"/>
+                    <constraint firstItem="xuC-U8-bgE" firstAttribute="top" secondItem="G1b-fz-KLW" secondAttribute="top" id="s7q-aD-mui"/>
                     <constraint firstItem="aIz-Zl-Cfr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="t3k-mg-oSc"/>
+                    <constraint firstItem="xuC-U8-bgE" firstAttribute="trailing" secondItem="B8F-sr-krt" secondAttribute="trailing" id="tpc-iG-Nzr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="endDatePicker" destination="xuC-U8-bgE" id="QOD-Bf-x76"/>
                 <outlet property="endDateText" destination="G1b-fz-KLW" id="Ah0-la-gj2"/>
                 <outlet property="notifyButton1" destination="aIz-Zl-Cfr" id="fYv-K5-G0p"/>
                 <outlet property="notifyButton2" destination="GkS-ya-uqX" id="5do-gh-b6N"/>
+                <outlet property="startDatePicker" destination="B8F-sr-krt" id="XUE-pQ-IBk"/>
                 <outlet property="startDateText" destination="8AY-RW-Fe1" id="9aN-An-iE1"/>
             </connections>
-            <point key="canvasLocation" x="174.63768115942031" y="196.54017857142856"/>
+            <point key="canvasLocation" x="174.63768115942031" y="181.80803571428569"/>
         </tableViewCell>
     </objects>
     <resources>

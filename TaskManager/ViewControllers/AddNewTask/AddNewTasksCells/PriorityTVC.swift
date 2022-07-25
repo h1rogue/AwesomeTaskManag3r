@@ -7,8 +7,8 @@
 
 import UIKit
 
-enum TaskPriority {
-    case po,p1,p2
+protocol PriorityTVCDelegate: AnyObject {
+    func prioritySelected(_ priority: AddNewTaskVM.Priorities)
 }
 
 class PriorityTVC: UITableViewCell {
@@ -26,10 +26,11 @@ class PriorityTVC: UITableViewCell {
     @IBOutlet weak private var p1Lbel: UILabel!
     @IBOutlet weak private var p2Label: UILabel!
     
-    var cellPriority: TaskPriority = .p2
+    weak var delegate: PriorityTVCDelegate?
     
+    var cellPriority: AddNewTaskVM.Priorities = .p2
     
-    func configure(cellPriority: TaskPriority) {
+    func configure(cellPriority: AddNewTaskVM.Priorities) {
         self.cellPriority = cellPriority
     }
     
@@ -57,7 +58,7 @@ class PriorityTVC: UITableViewCell {
     private func unselectOther() {
         var a: Int
         switch cellPriority {
-        case .po:
+        case .p0:
             poView.backgroundColor = .red
             poLabel.textColor = .white
             a = 0
@@ -91,17 +92,21 @@ class PriorityTVC: UITableViewCell {
     }
     
     @IBAction private func poClicked() {
-        cellPriority = .po
+        cellPriority = .p0
         unselectOther()
+        delegate?.prioritySelected(.p0)
+        
     }
 
     @IBAction private func p1Clicked() {
         cellPriority = .p1
         unselectOther()
+        delegate?.prioritySelected(.p1)
     }
     
     @IBAction private func p2Clicked() {
         cellPriority = .p2
         unselectOther()
+        delegate?.prioritySelected(.p2)
     }
 }

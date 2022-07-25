@@ -31,8 +31,8 @@ class AddNewTaskVM {
     }
     
     struct TimeLineSection: Hashable {
-        let startDate: String
-        let endDate: String
+        let startDate: Date
+        let endDate: Date
     }
     
     enum Priorities {
@@ -64,5 +64,78 @@ class AddNewTaskVM {
         snapShot.appendItems([.taskDetail(nil)], toSection: .taskDetails)
         snapShot.appendItems([.todos(todoList)], toSection: .todos)
         return snapShot
+    }
+    
+    var mandatoryFields: [TaskSections] = [.title, .taskDetails, .priority]
+    
+    var taskValues: [TaskSections: Items] = [:]
+    
+    private func validateTitle(_ text: String) -> Bool {
+        let text = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if text.isEmpty || text.count > 25 {
+            return false
+        }
+        return true
+    }
+    
+    private func validateTaskDetail(_ text: String) -> Bool {
+        let text = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if text.isEmpty || text.count > 100 {
+            return false
+        }
+        return true
+    }
+    
+    func saveTask() {
+        
+    }
+    
+    func validateFields() -> Bool {
+        for section in mandatoryFields {
+            switch section {
+            case .title:
+                if taskValues[.title] != nil {
+                    switch taskValues[.title] {
+                    case .titleSection(let model):
+                        guard let model = model else { return false }
+                        if !validateTitle(model.title) {
+                            //MARK: todo
+                            return false
+                        }
+                    default:
+                        break
+                    }
+                } else {
+                    return false
+                }
+            case .timeLine:
+                break
+            case .priority:
+                if taskValues[.priority] == nil {
+                    return false
+                }
+            case .taskDetails:
+                if taskValues[.taskDetails] != nil {
+                    switch taskValues[.taskDetails] {
+                    case .taskDetail(let model):
+                        guard let model = model else { return false }
+                        if !validateTaskDetail(model.taskDetails) {
+                            return false
+                        }
+                    default:
+                        break
+                    }
+                } else {
+                    return false
+                }
+            case .todos:
+                break
+            }
+        }
+        return true
+    }
+    
+    func updateTaskValues(section: TaskSections, item: Items) {
+            taskValues[section] = item
     }
 }

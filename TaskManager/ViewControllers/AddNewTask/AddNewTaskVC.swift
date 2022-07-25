@@ -90,7 +90,9 @@ class AddNewTaskVC: UIViewController {
     }
     
     @IBAction func saveTask(_ sender: Any) {
-        //MARK: on save task clicked
+        if viewModel.validateFields() {
+            viewModel.saveTask()
+        }
     }
 }
 
@@ -110,7 +112,7 @@ extension AddNewTaskVC {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTVC.identifier, for: indexPath) as? TitleTVC else {
                     return UITableViewCell()
                 }
-                cell.configure()
+                cell.delegate = self
                 return cell
             case .timeLineSection(_):
                 let cell = tableView.dequeueReusableCell(withIdentifier: DateTVC.identifier, for: indexPath) as? DateTVC
@@ -118,9 +120,11 @@ extension AddNewTaskVC {
                 return cell
             case .priorities(_):
                 let cell = tableView.dequeueReusableCell(withIdentifier: PriorityTVC.identifier, for: indexPath) as? PriorityTVC
+                cell?.delegate = self
                 return cell
             case .taskDetail(_):
                 let cell = tableView.dequeueReusableCell(withIdentifier: TaskDetailTVC.identifier, for: indexPath) as? TaskDetailTVC
+                cell?.delegate = self
                 return cell
             case .todos(let todoList):
                 let cell = tableView.dequeueReusableCell(withIdentifier: TodoTVC.identifier, for: indexPath) as? TodoTVC
@@ -159,7 +163,6 @@ extension AddNewTaskVC: TodoTVCDelegate {
         }
     }
     
-    
     func presentNewTodoSnckbar() {
         let mainStory = UIStoryboard.init(name: "Main", bundle: .main)
         if let vc = UIStoryboard.instantiateViewController(mainStory)(withIdentifier: "AddTodosSnackbar") as? AddTodosSnackbar {
@@ -174,8 +177,27 @@ extension AddNewTaskVC: TodoTVCDelegate {
 }
 
 extension AddNewTaskVC: DateTVCDelegate {
-    func editDateClicked(dateType: DateType) {
-//        datePickerView.isHidden = false
-//        datePicker.isHidden = false
+    func editDateClicked(timeLine: AddNewTaskVM.TimeLineSection) {
+            viewModel.updateTaskValues(section: .timeLine, item: .timeLineSection(timeLine))
     }
 }
+
+extension AddNewTaskVC: TitleTVCDelegate {
+    func updateTitle(title: String) {
+        viewModel.updateTaskValues(section: .title, item: .titleSection(AddNewTaskVM.TitleSection.init(title: title)))
+    }
+}
+
+extension AddNewTaskVC: PriorityTVCDelegate {
+    func prioritySelected(_ priority: AddNewTaskVM.Priorities) {
+        viewModel.updateTaskValues(section: .priority, item: .priorities(priority))
+    }
+}
+
+extension AddNewTaskVC: TaskDetailTVCDelegate {
+    func taskDetailAdded(_ taskDetail: AddNewTaskVM.TaskDetail) {
+        viewModel.updateTaskValues(section: .taskDetails, item: .taskDetail(taskDetail))
+    }
+}
+
+

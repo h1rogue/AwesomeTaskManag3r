@@ -7,14 +7,18 @@
 
 import UIKit
 
+protocol TaskDetailTVCDelegate: AnyObject {
+    func taskDetailAdded(_ taskDetail: AddNewTaskVM.TaskDetail)
+}
+
 class TaskDetailTVC: UITableViewCell {
 
     @IBOutlet weak private var taskDetailTextView: UITextView!
     @IBOutlet weak private var notifyButton: UIView!
-    
     @IBOutlet weak private var errorMaglabel: UILabel!
-    
     @IBOutlet weak private var taskView: UIView!
+    
+    weak var delegate: TaskDetailTVCDelegate?
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -38,7 +42,17 @@ class TaskDetailTVC: UITableViewCell {
 
 extension TaskDetailTVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        taskDetailTextView.text = ""
+        if taskDetailTextView.textColor == .lightGray {
+            taskDetailTextView.text = ""
+        }
         taskDetailTextView.textColor = .black
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.last == "\n" {
+            taskDetailTextView.endEditing(true)
+            textView.text.removeLast()
+            delegate?.taskDetailAdded(AddNewTaskVM.TaskDetail(taskDetails: textView.text))
+        }
     }
 }

@@ -30,8 +30,8 @@
             filePath = "TaskManager/ViewControllers/AddNewTask/AddNewTaskVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "makeDataSource()"
             landmarkType = "7">
          </BreakpointContent>
@@ -55,49 +55,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4B6D4A47-A2A8-4E1B-BB58-A9454CF187FF"
+            uuid = "67D39C06-E306-48B1-A850-EBDD1E18111D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TaskManager/ViewControllers/AddNewTask/AddNewTaskVC.swift"
+            filePath = "TaskManager/ViewControllers/AddNewTask/AddNewTaskVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "updateTodo(todo:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "saveTask()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6FE6D3BC-99E4-4C01-90D4-77A907AE6552"
-            shouldBeEnabled = "No"
+            uuid = "1E036D1D-A69A-4DE8-8920-236B34A71A9A"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TaskManager/ViewControllers/AddNewTask/AddNewTaskVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "updateTodoSnapshot(_:)"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "saveTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "700F8E84-4444-4EA9-BA18-47E0CC49105D"
+            uuid = "39F74D02-301E-4E27-B5EA-5FBD90F6AAC4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TaskManager/ViewControllers/AddNewTask/AddNewTasksCells/TaskDetailTVC.swift"
+            filePath = "TaskManager/ViewControllers/AddNewTask/AddNewTaskVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "textViewDidBeginEditing(_:)"
-            landmarkType = "9">
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "validateFields()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA397AEE-4892-4120-BB76-39F73B7605A4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TaskManager/ViewControllers/AddNewTask/AddNewTaskVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "validateTaskDetail(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC7A2AA6-88CA-4C8F-BC53-F8974095C3C1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TaskManager/ViewControllers/AddNewTask/AddNewTaskVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "validateTitle(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
