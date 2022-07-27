@@ -35,6 +35,7 @@
 		44B3F376287483E500C99658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B3F374287483E500C99658 /* LaunchScreen.storyboard */; };
 		44B3F37F287484E700C99658 /* CustomBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3F37E287484E700C99658 /* CustomBottomBar.swift */; };
 		44B3F3822874854F00C99658 /* CustomBottomBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B3F3812874854F00C99658 /* CustomBottomBar.xib */; };
+		47944386288EC67300F97F30 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47944385288EC67300F97F30 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		44B3F377287483E500C99658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44B3F37E287484E700C99658 /* CustomBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomBar.swift; sourceTree = "<group>"; };
 		44B3F3812874854F00C99658 /* CustomBottomBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomBottomBar.xib; sourceTree = "<group>"; };
+		47944385288EC67300F97F30 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				4453C010287A140600E1BC21 /* ExtensionFile.swift */,
+				47944385288EC67300F97F30 /* Utils.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				44046A3C2874D87A000BF56C /* AddNewTaskVC.swift in Sources */,
 				44B3F36A287483E200C99658 /* AppDelegate.swift in Sources */,
 				4453BFF42875EA5200E1BC21 /* DateTVC.swift in Sources */,
+				47944386288EC67300F97F30 /* Utils.swift in Sources */,
 				4453C011287A140600E1BC21 /* ExtensionFile.swift in Sources */,
 				4455C6C32881DD7E006F6830 /* AddTodosSnackbar.swift in Sources */,
 				44046A402874E2B7000BF56C /* AddNewTaskVM.swift in Sources */,

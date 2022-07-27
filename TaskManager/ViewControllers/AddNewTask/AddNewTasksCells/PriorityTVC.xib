@@ -130,10 +130,10 @@
                             <constraint firstAttribute="height" constant="40" id="DDu-5i-E5W"/>
                         </constraints>
                     </stackView>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9X-Ud-nvQ">
-                        <rect key="frame" x="84.5" y="41.5" width="0.0" height="0.0"/>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCy-pe-S2v">
+                        <rect key="frame" x="84.5" y="29.5" width="26.5" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" systemColor="systemRedColor"/>
+                        <color key="textColor" systemColor="systemPinkColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -142,23 +142,18 @@
                     <constraint firstItem="Pxx-Js-tWI" firstAttribute="centerY" secondItem="kRq-3t-byN" secondAttribute="centerY" id="7lJ-I0-ec1"/>
                     <constraint firstAttribute="trailing" secondItem="iDQ-4T-fLo" secondAttribute="trailing" constant="20" id="AOC-Oa-Cey"/>
                     <constraint firstItem="Pxx-Js-tWI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="EKQ-lW-qRK"/>
-                    <constraint firstItem="f9X-Ud-nvQ" firstAttribute="leading" secondItem="kRq-3t-byN" secondAttribute="trailing" constant="10" id="IhY-r0-kHc"/>
                     <constraint firstItem="kRq-3t-byN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Lxh-qJ-iCY"/>
+                    <constraint firstItem="uCy-pe-S2v" firstAttribute="centerY" secondItem="kRq-3t-byN" secondAttribute="centerY" id="P8c-XN-lGr"/>
                     <constraint firstItem="iDQ-4T-fLo" firstAttribute="leading" secondItem="kRq-3t-byN" secondAttribute="leading" id="Rt2-ST-jzu"/>
                     <constraint firstItem="iDQ-4T-fLo" firstAttribute="top" secondItem="kRq-3t-byN" secondAttribute="bottom" constant="20" id="Unm-10-2qi"/>
-                    <constraint firstItem="f9X-Ud-nvQ" firstAttribute="centerY" secondItem="kRq-3t-byN" secondAttribute="centerY" id="i6U-GD-aGo"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f9X-Ud-nvQ" secondAttribute="trailing" constant="20" id="kZT-15-ZN5"/>
+                    <constraint firstItem="uCy-pe-S2v" firstAttribute="leading" secondItem="kRq-3t-byN" secondAttribute="trailing" constant="10" id="eCT-Ht-ZVS"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uCy-pe-S2v" secondAttribute="trailing" constant="20" id="pbc-lZ-6st"/>
                     <constraint firstItem="kRq-3t-byN" firstAttribute="leading" secondItem="Pxx-Js-tWI" secondAttribute="trailing" constant="10" id="ptl-Me-ZQJ"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="subviews">
-                        <exclude reference="f9X-Ud-nvQ"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="errorMsgLabel" destination="f9X-Ud-nvQ" id="pgh-vZ-Lv5"/>
+                <outlet property="errorMsgLabel" destination="uCy-pe-S2v" id="qul-B7-zoA"/>
                 <outlet property="notifyButton" destination="Pxx-Js-tWI" id="MXE-4H-sVe"/>
                 <outlet property="p1Button" destination="zlE-2b-eBm" id="16L-o0-XvN"/>
                 <outlet property="p1Lbel" destination="w7o-0A-QYd" id="iHE-hK-n90"/>
@@ -174,6 +169,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

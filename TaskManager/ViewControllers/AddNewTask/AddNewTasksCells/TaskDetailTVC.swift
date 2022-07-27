@@ -17,6 +17,7 @@ class TaskDetailTVC: UITableViewCell {
     @IBOutlet weak private var notifyButton: UIView!
     @IBOutlet weak private var errorMaglabel: UILabel!
     @IBOutlet weak private var taskView: UIView!
+    @IBOutlet weak private var placeHolderText: UILabel!
     
     weak var delegate: TaskDetailTVCDelegate?
     
@@ -29,30 +30,37 @@ class TaskDetailTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.taskDetailTextView.text = "Add Task Details (Max 100 words)."
-        self.taskDetailTextView.textColor = .lightGray
         self.notifyButton.layer.cornerRadius = self.notifyButton.frame.height/2
         self.taskDetailTextView.delegate = self
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    
+    func configureError(text: String? = nil, error: ValidationErrors? = nil) {
+        if let text = text {
+            self.taskDetailTextView.text = text
+        }
+        
+        if error != nil {
+            self.errorMaglabel.text = error?.rawValue
+            self.errorMaglabel.isHidden = false
+        } else {
+            self.errorMaglabel.isHidden = true
+        }
     }
 }
 
 extension TaskDetailTVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if taskDetailTextView.textColor == .lightGray {
-            taskDetailTextView.text = ""
-        }
-        taskDetailTextView.textColor = .black
+        placeHolderText.isHidden = true
     }
     
     func textViewDidChange(_ textView: UITextView) {
         if textView.text.last == "\n" {
             taskDetailTextView.endEditing(true)
             textView.text.removeLast()
-            delegate?.taskDetailAdded(AddNewTaskVM.TaskDetail(taskDetails: textView.text))
+            if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                placeHolderText.isHidden = false
+            }
+            delegate?.taskDetailAdded(.init(taskDetail: textView.text))
         }
     }
 }
