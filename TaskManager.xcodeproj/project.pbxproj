@@ -36,6 +36,14 @@
 		44B3F37F287484E700C99658 /* CustomBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3F37E287484E700C99658 /* CustomBottomBar.swift */; };
 		44B3F3822874854F00C99658 /* CustomBottomBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B3F3812874854F00C99658 /* CustomBottomBar.xib */; };
 		47944386288EC67300F97F30 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47944385288EC67300F97F30 /* Utils.swift */; };
+		4794440128931BED00F97F30 /* TaskManagerData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 479443FF28931BED00F97F30 /* TaskManagerData.xcdatamodeld */; };
+		4794448C2893F28000F97F30 /* SingleTodo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479444882893F28000F97F30 /* SingleTodo+CoreDataClass.swift */; };
+		4794448D2893F28000F97F30 /* SingleTodo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479444892893F28000F97F30 /* SingleTodo+CoreDataProperties.swift */; };
+		479444952893F51100F97F30 /* TaskCollectionCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479444932893F51000F97F30 /* TaskCollectionCVC.swift */; };
+		479444962893F51100F97F30 /* TaskCollectionCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479444942893F51000F97F30 /* TaskCollectionCVC.xib */; };
+		4794449D2894048F00F97F30 /* TaskDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794449B2894048F00F97F30 /* TaskDataModel+CoreDataClass.swift */; };
+		4794449E2894048F00F97F30 /* TaskDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794449C2894048F00F97F30 /* TaskDataModel+CoreDataProperties.swift */; };
+		479444A02894119F00F97F30 /* CollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794449F2894119F00F97F30 /* CollectionViewWaterfallLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +78,14 @@
 		44B3F37E287484E700C99658 /* CustomBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomBar.swift; sourceTree = "<group>"; };
 		44B3F3812874854F00C99658 /* CustomBottomBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomBottomBar.xib; sourceTree = "<group>"; };
 		47944385288EC67300F97F30 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4794440028931BED00F97F30 /* TaskManagerData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskManagerData.xcdatamodel; sourceTree = "<group>"; };
+		479444882893F28000F97F30 /* SingleTodo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SingleTodo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		479444892893F28000F97F30 /* SingleTodo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SingleTodo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		479444932893F51000F97F30 /* TaskCollectionCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionCVC.swift; sourceTree = "<group>"; };
+		479444942893F51000F97F30 /* TaskCollectionCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCollectionCVC.xib; sourceTree = "<group>"; };
+		4794449B2894048F00F97F30 /* TaskDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4794449C2894048F00F97F30 /* TaskDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4794449F2894119F00F97F30 /* CollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +120,10 @@
 		44046A3D2874E286000BF56C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				479444922893F4E400F97F30 /* HomeCVC */,
 				44B3F36D287483E200C99658 /* HomeVC.swift */,
 				44046A382874D69B000BF56C /* HomeViewVM.swift */,
+				4794449F2894119F00F97F30 /* CollectionViewWaterfallLayout.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -184,6 +202,7 @@
 		44B3F368287483E200C99658 /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
+				479444062893210200F97F30 /* CoreData Model */,
 				4453C00F287A13F500E1BC21 /* Common */,
 				44046A3A2874D850000BF56C /* ViewControllers */,
 				44046A352874D491000BF56C /* TaskModel */,
@@ -194,6 +213,7 @@
 				44B3F372287483E500C99658 /* Assets.xcassets */,
 				44B3F374287483E500C99658 /* LaunchScreen.storyboard */,
 				44B3F377287483E500C99658 /* Info.plist */,
+				479443FF28931BED00F97F30 /* TaskManagerData.xcdatamodeld */,
 			);
 			path = TaskManager;
 			sourceTree = "<group>";
@@ -214,6 +234,26 @@
 				44B3F3812874854F00C99658 /* CustomBottomBar.xib */,
 			);
 			path = BottomBar;
+			sourceTree = "<group>";
+		};
+		479444062893210200F97F30 /* CoreData Model */ = {
+			isa = PBXGroup;
+			children = (
+				4794449B2894048F00F97F30 /* TaskDataModel+CoreDataClass.swift */,
+				4794449C2894048F00F97F30 /* TaskDataModel+CoreDataProperties.swift */,
+				479444882893F28000F97F30 /* SingleTodo+CoreDataClass.swift */,
+				479444892893F28000F97F30 /* SingleTodo+CoreDataProperties.swift */,
+			);
+			path = "CoreData Model";
+			sourceTree = "<group>";
+		};
+		479444922893F4E400F97F30 /* HomeCVC */ = {
+			isa = PBXGroup;
+			children = (
+				479444932893F51000F97F30 /* TaskCollectionCVC.swift */,
+				479444942893F51000F97F30 /* TaskCollectionCVC.xib */,
+			);
+			path = HomeCVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44046A452874E90C000BF56C /* CustomTextField.xib in Resources */,
+				479444962893F51100F97F30 /* TaskCollectionCVC.xib in Resources */,
 				44B3F376287483E500C99658 /* LaunchScreen.storyboard in Resources */,
 				4453BFF02875E1FE00E1BC21 /* TitleTVC.xib in Resources */,
 				44B3F3822874854F00C99658 /* CustomBottomBar.xib in Resources */,
@@ -298,10 +339,16 @@
 				4453BFEF2875E1FE00E1BC21 /* TitleTVC.swift in Sources */,
 				44B3F36E287483E200C99658 /* HomeVC.swift in Sources */,
 				44B3F37F287484E700C99658 /* CustomBottomBar.swift in Sources */,
+				4794448D2893F28000F97F30 /* SingleTodo+CoreDataProperties.swift in Sources */,
 				4453C000287602E300E1BC21 /* TodoTVC.swift in Sources */,
 				4453BFF82875F0D400E1BC21 /* PriorityTVC.swift in Sources */,
+				479444A02894119F00F97F30 /* CollectionViewWaterfallLayout.swift in Sources */,
 				44046A392874D69B000BF56C /* HomeViewVM.swift in Sources */,
+				479444952893F51100F97F30 /* TaskCollectionCVC.swift in Sources */,
+				4794448C2893F28000F97F30 /* SingleTodo+CoreDataClass.swift in Sources */,
 				4453BFFC2876014700E1BC21 /* TaskDetailTVC.swift in Sources */,
+				4794449E2894048F00F97F30 /* TaskDataModel+CoreDataProperties.swift in Sources */,
+				4794449D2894048F00F97F30 /* TaskDataModel+CoreDataClass.swift in Sources */,
 				44046A372874D4A8000BF56C /* TaskModel.swift in Sources */,
 				44046A3C2874D87A000BF56C /* AddNewTaskVC.swift in Sources */,
 				44B3F36A287483E200C99658 /* AppDelegate.swift in Sources */,
@@ -309,6 +356,7 @@
 				47944386288EC67300F97F30 /* Utils.swift in Sources */,
 				4453C011287A140600E1BC21 /* ExtensionFile.swift in Sources */,
 				4455C6C32881DD7E006F6830 /* AddTodosSnackbar.swift in Sources */,
+				4794440128931BED00F97F30 /* TaskManagerData.xcdatamodeld in Sources */,
 				44046A402874E2B7000BF56C /* AddNewTaskVM.swift in Sources */,
 				44B3F36C287483E200C99658 /* SceneDelegate.swift in Sources */,
 				4453C005287624AD00E1BC21 /* TodoCell.swift in Sources */,
@@ -532,6 +580,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		479443FF28931BED00F97F30 /* TaskManagerData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4794440028931BED00F97F30 /* TaskManagerData.xcdatamodel */,
+			);
+			currentVersion = 4794440028931BED00F97F30 /* TaskManagerData.xcdatamodel */;
+			path = TaskManagerData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 44B3F35E287483E200C99658 /* Project object */;
 }

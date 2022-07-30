@@ -6,25 +6,25 @@
 //
 
 import Foundation
+import CoreData
 
 
-struct TaskModel: Codable {
-    let title: String
-    let startDate: String
-    let endDate: String
-    let taskDetail: String
-    let taskCreationDate: String
-    let priority: TaskModelPriority
-    let todosList: [Todos]?
+enum HomeSection {
+    case home
 }
 
-enum TaskModelPriority: Codable {
-    case p0
-    case p1
-    case p2
+struct TaskModel: Identifiable, Hashable {
+    var id: UUID
+    var title: String = ""
+    var startDate: Date = Date()
+    var endDate: Date = Date()
+    var taskDetail: String = ""
+    var taskCreationDate: Date = Date()
+    var priority: Int16 = 2
+    var todosList: [Todos]?
 }
 
-class Todos: Codable, Hashable {
+class Todos: Hashable {
     
     static func == (lhs: Todos, rhs: Todos) -> Bool {
         return lhs.title == rhs.title && lhs.todoDetail == rhs.todoDetail && lhs.id == rhs.id

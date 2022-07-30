@@ -45,26 +45,30 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="B8F-sr-krt">
-                        <rect key="frame" x="235" y="12" width="120" height="30"/>
+                    <datePicker contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="B8F-sr-krt">
+                        <rect key="frame" x="255" y="12" width="100" height="30"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <color key="tintColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="120" id="AdK-Vz-vxn"/>
+                            <constraint firstAttribute="width" constant="100" id="8qN-HS-4lk"/>
                             <constraint firstAttribute="height" constant="30" id="Udw-I4-atn"/>
                         </constraints>
+                        <locale key="locale" localeIdentifier="en_IN"/>
                     </datePicker>
-                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="xuC-U8-bgE">
-                        <rect key="frame" x="235" y="77.5" width="120" height="30"/>
-                        <color key="tintColor" systemColor="labelColor"/>
+                    <datePicker contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="xuC-U8-bgE">
+                        <rect key="frame" x="255" y="77.5" width="100" height="30"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="120" id="CaG-FK-ma3"/>
+                            <constraint firstAttribute="width" constant="100" id="Aah-SR-iKz"/>
                             <constraint firstAttribute="height" constant="30" id="PSh-Ex-yoc"/>
                         </constraints>
+                        <locale key="locale" localeIdentifier="en_IN"/>
                     </datePicker>
                 </subviews>
                 <constraints>
                     <constraint firstItem="8AY-RW-Fe1" firstAttribute="centerY" secondItem="aIz-Zl-Cfr" secondAttribute="centerY" id="1AH-Bk-ZxK"/>
-                    <constraint firstItem="xuC-U8-bgE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G1b-fz-KLW" secondAttribute="trailing" constant="10" id="7yO-bI-mY4"/>
+                    <constraint firstItem="xuC-U8-bgE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G1b-fz-KLW" secondAttribute="trailing" constant="50" id="50X-Q2-xPy"/>
                     <constraint firstItem="8AY-RW-Fe1" firstAttribute="leading" secondItem="aIz-Zl-Cfr" secondAttribute="trailing" constant="10" id="Bmc-4K-xDn"/>
                     <constraint firstAttribute="trailingMargin" secondItem="G1b-fz-KLW" secondAttribute="trailing" constant="266" id="FOB-Qr-FKt"/>
                     <constraint firstItem="GkS-ya-uqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="GoY-0G-dkf"/>
@@ -73,7 +77,7 @@
                     <constraint firstItem="aIz-Zl-Cfr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Q29-8O-3xU"/>
                     <constraint firstAttribute="trailing" secondItem="B8F-sr-krt" secondAttribute="trailing" constant="20" id="VOM-QZ-614"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xuC-U8-bgE" secondAttribute="bottom" constant="20" id="WGQ-h3-6R5"/>
-                    <constraint firstItem="B8F-sr-krt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8AY-RW-Fe1" secondAttribute="trailing" constant="10" id="g6Z-In-pkX"/>
+                    <constraint firstItem="B8F-sr-krt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8AY-RW-Fe1" secondAttribute="trailing" constant="50" id="dqL-Wf-VM4"/>
                     <constraint firstItem="G1b-fz-KLW" firstAttribute="centerY" secondItem="GkS-ya-uqX" secondAttribute="centerY" id="hXS-Lp-BL3"/>
                     <constraint firstItem="GkS-ya-uqX" firstAttribute="top" secondItem="aIz-Zl-Cfr" secondAttribute="bottom" constant="60" id="osW-kA-g29"/>
                     <constraint firstItem="B8F-sr-krt" firstAttribute="top" secondItem="8AY-RW-Fe1" secondAttribute="top" id="r1h-Jg-p0e"/>
@@ -97,6 +101,9 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

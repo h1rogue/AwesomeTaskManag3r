@@ -7,10 +7,16 @@
 
 import UIKit
 
+
+protocol AddNewTaskVCDelegate: AnyObject {
+    func saveData(data: [AddNewTaskVM.TaskSections : AddNewTaskVM.Items], view: UIViewController)
+}
+
 class AddNewTaskVC: UIViewController {
     
     @IBOutlet weak private var tableView: UITableView!
     var viewModel: AddNewTaskVM = AddNewTaskVM()
+    weak var delegate: AddNewTaskVCDelegate?
     
     private lazy var dataSource = makeDataSource()
     
@@ -87,6 +93,7 @@ class AddNewTaskVC: UIViewController {
     private func setUpNavBar() {
         self.navigationItem.title = "Add New Task"
         self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.tintColor = .black
     }
     
     @IBAction func saveTask(_ sender: Any) {
@@ -101,6 +108,10 @@ extension AddNewTaskVC : UITableViewDelegate {
 }
 
 extension AddNewTaskVC: AddNewTaskVMDelegate {
+    func saveData(data: [AddNewTaskVM.TaskSections : AddNewTaskVM.Items]) {
+        delegate?.saveData(data: data, view: self)
+    }
+    
     
     func reloadTitle(text: String? = nil, error: ValidationErrors) {
         var snapshot = dataSource.snapshot()
@@ -229,6 +240,7 @@ extension AddNewTaskVC {
             case .timeLineSection(_):
                 let cell = tableView.dequeueReusableCell(withIdentifier: DateTVC.identifier, for: indexPath) as? DateTVC
                 cell?.delegate = self
+                cell?.setupCell()
                 return cell
             case .priorities(let model):
                 let cell = tableView.dequeueReusableCell(withIdentifier: PriorityTVC.identifier, for: indexPath) as? PriorityTVC

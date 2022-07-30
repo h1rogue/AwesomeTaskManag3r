@@ -42,6 +42,7 @@ class PriorityTVC: UITableViewCell {
             }
             poView.backgroundColor = .red
             poLabel.textColor = .white
+            delegate?.prioritySelected(cellPriority)
         case .p1(let err):
             if let err = err {
                 errorMsgLabel.text = err.rawValue
@@ -51,6 +52,7 @@ class PriorityTVC: UITableViewCell {
             }
             p1View.backgroundColor = .orange
             p1Lbel.textColor = .white
+            delegate?.prioritySelected(cellPriority)
         case .p2(let err):
             if let err = err {
                 errorMsgLabel.text = err.rawValue
@@ -60,6 +62,7 @@ class PriorityTVC: UITableViewCell {
             }
             p2View.backgroundColor = .systemGreen
             p2Label.textColor = .white
+            delegate?.prioritySelected(cellPriority)
         }
     }
     

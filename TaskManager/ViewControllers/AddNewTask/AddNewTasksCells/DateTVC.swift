@@ -33,7 +33,6 @@ class DateTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupCell()
     }
     
     override func layoutSubviews() {
@@ -44,6 +43,8 @@ class DateTVC: UITableViewCell {
     }
     
     func setupCell() {
+        startDatePicker.preferredDatePickerStyle = .compact
+        endDatePicker.preferredDatePickerStyle = .compact
         notifyButton1.layer.cornerRadius = notifyButton1.frame.height/2
         notifyButton2.layer.cornerRadius = notifyButton2.frame.height/2
         startDatePicker.layer.borderColor = UIColor.black.cgColor
@@ -51,8 +52,8 @@ class DateTVC: UITableViewCell {
         endDatePicker.layer.borderColor = UIColor.black.cgColor
         endDatePicker.layer.borderWidth = 1
         
-        startDatePicker.addTarget(self, action: #selector(startDateSelected), for: .editingDidEnd)
-        endDatePicker.addTarget(self, action: #selector(endDateSelected), for: .editingDidEnd)
+        startDatePicker.addTarget(self, action: #selector(startDateSelected), for: .editingDidEndOnExit)
+        endDatePicker.addTarget(self, action: #selector(endDateSelected), for: .editingDidEndOnExit)
         
         delegate?.editDateClicked(timeLine: AddNewTaskVM.TimeLineSection(startDate: Date(), endDate: Date()))
     }
@@ -70,11 +71,6 @@ class DateTVC: UITableViewCell {
             delegate?.editDateClicked(timeLine: AddNewTaskVM.TimeLineSection(startDate: startDatePicker.date, endDate: endDatePicker.date))
         }
     }
-    
-    func configure() {
-        
-    }
-    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -8,15 +8,12 @@
 import Foundation
 import UIKit
 
-extension UITableViewCell {
-    static var identifier: String {
-        return String(describing: self)
-    }
-}
-
 extension UIView {
     func addDefaultCornerRadius(_ radius: Double = 4.0) {
         self.layer.cornerRadius = radius
+    }
+    static var identifier: String {
+        return String(describing: self)
     }
 }
 

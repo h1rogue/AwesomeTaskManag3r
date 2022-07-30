@@ -32,11 +32,16 @@ class TaskDetailTVC: UITableViewCell {
         super.awakeFromNib()
         self.notifyButton.layer.cornerRadius = self.notifyButton.frame.height/2
         self.taskDetailTextView.delegate = self
+        
     }
     
     func configureError(text: String? = nil, error: ValidationErrors? = nil) {
+
         if let text = text {
             self.taskDetailTextView.text = text
+            placeHolderText.isHidden = true
+        } else {
+            placeHolderText.isHidden = false
         }
         
         if error != nil {

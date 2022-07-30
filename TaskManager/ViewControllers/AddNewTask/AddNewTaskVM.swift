@@ -13,6 +13,8 @@ protocol AddNewTaskVMDelegate: AnyObject {
     func reloadTitleWithVal(_ with: String?)
     func reloadTaskDetail(text: String?, error: ValidationErrors)
     func reloadTaskDetailwithVal(_ with: String?)
+    
+    func saveData(data: [AddNewTaskVM.TaskSections : AddNewTaskVM.Items])
 }
 
 protocol ValidationErrorProtocol {
@@ -129,10 +131,6 @@ class AddNewTaskVM {
         return .success(text)
     }
     
-    func saveTask() {
-        
-    }
-    
     func validateFields() {
         for section in mandatoryFields {
             switch section {
@@ -180,9 +178,15 @@ class AddNewTaskVM {
                 break
             }
         }
+        updateTaskValues(section: .todos, item: .todos(todoList))
+        saveTask()
     }
     
     func updateTaskValues(section: TaskSections, item: Items) {
             taskValues[section] = item
+    }
+    
+    private func saveTask() {
+        delegate?.saveData(data: taskValues)
     }
 }
