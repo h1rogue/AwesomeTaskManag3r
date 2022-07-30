@@ -27,6 +27,19 @@ class TitleTVC: UITableViewCell {
         configure()
     }
     
+    func configureError(text: String? = nil, error: ValidationErrors? = nil) {
+        if let text = text {
+            self.textField.text = text
+        }
+        
+        if error != nil {
+            self.errorMsgLabel.text = error?.rawValue
+            self.errorMsgLabel.isHidden = false
+        } else {
+            self.errorMsgLabel.isHidden = true
+        }
+    }
+    
     func configure() {
         self.titleLabel.text = "Title"
         self.textField.placeholder = "Add Title"
@@ -47,6 +60,7 @@ extension TitleTVC: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         self.titleText = textField.text ?? ""
+        delegate?.updateTitle(title: textField.text ?? "")
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

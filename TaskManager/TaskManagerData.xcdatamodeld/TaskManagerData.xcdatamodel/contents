@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="SingleTodo" representedClassName=".SingleTodo" syncable="YES">
+        <attribute name="isComplete" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String" defaultValueString=""/>
+        <attribute name="todoDetail" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="TaskDataModel" representedClassName=".TaskDataModel" syncable="YES">
+        <attribute name="endDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="priority" attributeType="Integer 16" defaultValueString="2" usesScalarValueType="YES"/>
+        <attribute name="startDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="taskCreationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="taskDetail" attributeType="String" defaultValueString=""/>
+        <attribute name="title" attributeType="String" defaultValueString=""/>
+        <attribute name="todoList" optional="YES" attributeType="Transformable" customClassName="[SingleTodo]"/>
+    </entity>
+    <elements>
+        <element name="TaskDataModel" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="SingleTodo" positionX="-54" positionY="36" width="128" height="74"/>
+    </elements>
+</model>

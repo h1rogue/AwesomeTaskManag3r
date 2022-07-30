@@ -28,7 +28,7 @@ class TodoTVC: UITableViewCell {
     }
     
     func  configure(todoList: [Todos]) {
-        let views = todoListStackView.arrangedSubviews
+
         for view in todoListStackView.subviews {
             view.removeFromSuperview()
         }

@@ -51,12 +51,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add task details (Max 100 characters)." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeH-Wg-YsT">
+                                <rect key="frame" x="10" y="10" width="248.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pUh-Sa-2wg" firstAttribute="top" secondItem="9IE-Ec-Qy1" secondAttribute="top" id="0JL-VZ-Iui"/>
+                            <constraint firstItem="FeH-Wg-YsT" firstAttribute="top" secondItem="9IE-Ec-Qy1" secondAttribute="top" constant="10" id="A8X-U4-RHh"/>
                             <constraint firstAttribute="bottom" secondItem="pUh-Sa-2wg" secondAttribute="bottom" id="CJl-6G-TPD"/>
                             <constraint firstItem="pUh-Sa-2wg" firstAttribute="leading" secondItem="9IE-Ec-Qy1" secondAttribute="leading" constant="5" id="OB5-IT-ICQ"/>
+                            <constraint firstItem="FeH-Wg-YsT" firstAttribute="leading" secondItem="9IE-Ec-Qy1" secondAttribute="leading" constant="10" id="j20-5K-8zY"/>
                             <constraint firstAttribute="trailing" secondItem="pUh-Sa-2wg" secondAttribute="trailing" constant="5" id="lkf-AT-2uj"/>
                         </constraints>
                     </view>
@@ -79,6 +87,7 @@
             <connections>
                 <outlet property="errorMaglabel" destination="6iR-fK-WeB" id="Ll7-ZM-9ph"/>
                 <outlet property="notifyButton" destination="YX1-5M-vlH" id="OpQ-Lv-Yg8"/>
+                <outlet property="placeHolderText" destination="FeH-Wg-YsT" id="7vH-Dg-IcF"/>
                 <outlet property="taskDetailTextView" destination="pUh-Sa-2wg" id="ku8-Ic-ect"/>
                 <outlet property="taskView" destination="9IE-Ec-Qy1" id="iri-c9-vR0"/>
             </connections>
@@ -91,6 +100,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

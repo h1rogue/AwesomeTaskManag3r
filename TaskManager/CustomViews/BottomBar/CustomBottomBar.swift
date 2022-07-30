@@ -21,6 +21,8 @@ class CustomBottomBar: UIView {
         super.layoutSubviews()
         circleButton.layer.borderColor = UIColor.black.cgColor
         circleButton.layer.borderWidth = 2
+        bottomBarView.layer.borderWidth = 1
+        bottomBarView.layer.borderColor = UIColor.black.cgColor
     }
     
     required init?(coder: NSCoder) {
@@ -35,6 +37,7 @@ class CustomBottomBar: UIView {
     private func commonInit() {
         if let customBar = Bundle.main.loadNibNamed("CustomBottomBar", owner: self, options: nil)?[0] as? UIView {
             customBar.frame = bounds
+            backgroundColor = .clear
             addSubview(customBar)
             circleButton.layer.cornerRadius = circleButton.frame.height/2
             circleButton.clipsToBounds = true

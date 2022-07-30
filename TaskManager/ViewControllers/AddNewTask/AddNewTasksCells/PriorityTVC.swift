@@ -28,10 +28,42 @@ class PriorityTVC: UITableViewCell {
     
     weak var delegate: PriorityTVCDelegate?
     
-    var cellPriority: AddNewTaskVM.Priorities = .p2
+    var cellPriority: AddNewTaskVM.Priorities?
     
     func configure(cellPriority: AddNewTaskVM.Priorities) {
-        self.cellPriority = cellPriority
+   
+        switch cellPriority {
+        case .p0(let err):
+            if let err = err {
+                errorMsgLabel.text = err.rawValue
+                errorMsgLabel.isHidden = false
+            } else {
+                 errorMsgLabel.isHidden = true
+            }
+            poView.backgroundColor = .red
+            poLabel.textColor = .white
+            delegate?.prioritySelected(cellPriority)
+        case .p1(let err):
+            if let err = err {
+                errorMsgLabel.text = err.rawValue
+                errorMsgLabel.isHidden = false
+            } else {
+                errorMsgLabel.isHidden = true
+            }
+            p1View.backgroundColor = .orange
+            p1Lbel.textColor = .white
+            delegate?.prioritySelected(cellPriority)
+        case .p2(let err):
+            if let err = err {
+                errorMsgLabel.text = err.rawValue
+                errorMsgLabel.isHidden = false
+            } else {
+                errorMsgLabel.isHidden = true
+            }
+            p2View.backgroundColor = .systemGreen
+            p2Label.textColor = .white
+            delegate?.prioritySelected(cellPriority)
+        }
     }
     
     override func layoutSubviews() {
@@ -57,6 +89,7 @@ class PriorityTVC: UITableViewCell {
     
     private func unselectOther() {
         var a: Int
+        guard let cellPriority = cellPriority else { return }
         switch cellPriority {
         case .p0:
             poView.backgroundColor = .red
@@ -92,21 +125,26 @@ class PriorityTVC: UITableViewCell {
     }
     
     @IBAction private func poClicked() {
-        cellPriority = .p0
-        unselectOther()
-        delegate?.prioritySelected(.p0)
-        
+        if cellPriority != .p0() {
+            cellPriority = .p0()
+            unselectOther()
+            delegate?.prioritySelected(.p0())
+        }
     }
 
     @IBAction private func p1Clicked() {
-        cellPriority = .p1
-        unselectOther()
-        delegate?.prioritySelected(.p1)
+        if cellPriority != .p1() {
+            cellPriority = .p1()
+            unselectOther()
+            delegate?.prioritySelected(.p1())
+        }
     }
     
     @IBAction private func p2Clicked() {
-        cellPriority = .p2
-        unselectOther()
-        delegate?.prioritySelected(.p2)
+        if cellPriority != .p2() {
+            cellPriority = .p2()
+            unselectOther()
+            delegate?.prioritySelected(.p2())
+        }
     }
 }
